@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>云山茶礼 · 企业定制方案</title>
+<style>
+:root {
+  --ink: #1a1a1a;
+  --stone: #4a4a4a;
+  --warm: #8a7e6e;
+  --paper: #faf8f5;
+  --border: #e8e4df;
+  --accent: #5a7a4a;
+  --rose: #a05050;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 960px; margin: 0 auto; padding: 0 28px; }
+
+/* Hero */
+.hero {
+  padding: 60px 0 40px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.hero-label {
+  font-size: 11px;
+  letter-spacing: 6px;
+  color: var(--warm);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.hero-title {
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: 8px;
+  margin-bottom: 12px;
+}
+.hero-sub {
+  font-size: 15px;
+  color: var(--stone);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.hero-price {
+  margin-top: 28px;
+  font-size: 14px;
+  color: var(--warm);
+  letter-spacing: 2px;
+}
+.hero-price strong {
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--ink);
+  letter-spacing: 3px;
+}
+
+/* Section */
+.section { margin: 48px 0; }
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  margin-bottom: 28px;
+}
+.section-name {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 4px;
+}
+.section-tag {
+  font-size: 12px;
+  color: var(--warm);
+  letter-spacing: 2px;
+}
+.section-note {
+  font-size: 13px;
+  color: var(--stone);
+  margin-bottom: 24px;
+  padding-left: 4px;
+}
+
+/* Product Card */
+.product {
+  background: #fff;
+  border: 1px solid var(--border);
+  margin-bottom: 20px;
+  display: flex;
+  overflow: hidden;
+}
+.product-images {
+  display: flex;
+  width: 280px;
+  flex-shrink: 0;
+}
+.product-images img {
+  width: 50%;
+  height: 200px;
+  object-fit: cover;
+}
+.product-info {
+  padding: 24px 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.product-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+.product-name {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+.product-tag {
+  font-size: 10px;
+  padding: 3px 10px;
+  border: 1px solid var(--border);
+  color: var(--warm);
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+.product-tag.exclusive {
+  background: var(--rose);
+  color: #fff;
+  border-color: var(--rose);
+}
+.product-year {
+  font-size: 12px;
+  color: var(--warm);
+  margin-bottom: 12px;
+}
+.product-desc {
+  font-size: 14px;
+  color: var(--stone);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.product-spec {
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+  color: var(--stone);
+}
+.product-spec span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.product-spec strong {
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--ink);
+}
+
+/* Summary Bar */
+.summary-bar {
+  background: var(--ink);
+  color: #fff;
+  padding: 36px 0;
+  margin-top: 40px;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+.summary-item .label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 10px;
+}
+.summary-item .value {
+  font-size: 26px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+.summary-item .unit {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 6px;
+}
+
+/* Compare */
+.compare {
+  margin: 40px 0;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid var(--border);
+}
+.compare-title {
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: var(--warm);
+  margin-bottom: 20px;
+  text-align: center;
+}
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.compare-col {
+  text-align: center;
+}
+.compare-col h4 {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+.compare-col ul {
+  list-style: none;
+  font-size: 13px;
+  color: var(--stone);
+  line-height: 2.2;
+}
+.compare-col ul li::before {
+  content: "— ";
+  color: var(--border);
+}
+.compare-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--warm);
+  letter-spacing: 2px;
+}
+
+/* Footer */
+.footer {
+  padding: 40px 0 60px;
+  text-align: center;
+}
+.footer-line {
+  width: 30px;
+  height: 1px;
+  background: var(--border);
+  margin: 0 auto 20px;
+}
+.footer-brand {
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.footer-slogan {
+  font-size: 12px;
+  color: var(--warm);
+  letter-spacing: 2px;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .product { flex-direction: column; }
+  .product-images { width: 100%; }
+  .product-images img { height: 160px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+  .compare-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: 26px; letter-spacing: 4px; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-label">YUNSHAN TEA GIFT</div>
+  <h1 class="hero-title">云山茶礼</h1>
+  <p class="hero-sub">企业定制茶礼方案 · 一饼一盒 · 从设计到成品</p>
+  <div class="hero-price">
+    统一终端售价 <strong>¥260</strong>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Package A -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-name">套餐一 · 云山初见</div>
+      <div class="section-tag">6款茶 · 1350g · 均衡配置</div>
+    </div>
+    <p class="section-note">四款250g大袋 + 两款150-200g标准装，打开即见六袋实在分量，无小气感。</p>
+
+    <div class="product">
+      <div class="product-images">
+        <img src="b1_01_冰岛古白_包装.jpg" alt="包装">
+        <img src="b1_01_冰岛古白_干茶.jpg" alt="干茶">
+      </div>
+      <div class="product-info">
+        <div class="product-top">
+          <div class="product-name">冰岛古白</div>
+          <div class="product-tag">香气主调</div>
+        </div>
+        <div class="product-year">2021年 · 冰岛产区</div>
+        <div class="product-desc">古树白茶，毫香蜜韵，清甜持久。冰岛产区的辨识度香气，整盒茶礼的第一印象。</div>
+        <div class="product-spec">
+          <span><strong>250g</strong> 大袋装</span>
+          <span>约100杯</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-images">
+        <img src="b1_02_古树白茶_包装.jpg" alt="包装">
+        <img src="b1_02_古树白茶_干茶.jpg" alt="干茶">
+      </div>
+      <div class="product-info">
+        <div class="product-top">
+          <div class="product-name">古树白茶</div>
+          <div class="product-tag">醇厚打底</div>
+        </div>
+        <div class="product-year">2021年 · 云南大叶种</div>
+        <div class="product-desc">日晒萎凋，自然陈化。枣香药韵渐显，越存越醇，是茶礼中经得起时间检验的底牌。</div>
+        <div class="product-spec">
+          <span><strong>250g</strong> 大袋装</span>
+          <span>约100杯</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-images">
+        <img src="b1_03_云雾绿茶_包装.jpg" alt="包装">
+        <img src="b1_03_云雾绿茶_干茶.jpg" alt="干茶">
+      </div>
+      <div class="product-info">
+        <div class="product-top">
+          <div class="product-name">云雾绿茶</div>
+          <div class="product-tag">鲜爽代表</div>
+        </div>
+        <div class="product-year">2026年春 · 高海拔云雾产区</div>
+        <div class="product-desc">栗香清扬，回甘生津。春茶采摘，一芽一叶，是茶礼中提神解腻的清新担当。</div>
+        <div class="product-spec">
+          <span><strong>250g</strong> 大袋装</span>
+          <span>约100杯</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-images">
+        <img src="b1_04_茉莉花茶_包装.jpg" alt="包装">
+        <img src="b1_04_茉莉花茶_干茶.jpg" alt="干茶">
+      </div>
+      <div class="product-info">
+        <div class="product-top">
+          <div class="product-name">茉莉花茶</div>
+          <div class="product-tag">花香代表</div>
+        </div>
+        <div class="product-year">2026年 · 六窨一提</div>
+        <div class="product-desc">茉莉鲜花反复窨制，花香入茶骨。开袋即香，是茶礼中最受欢迎的入门款。</div>
+        <div class="product-spec">
+          <span><strong>250g</strong> 大袋装</span>
+          <span>约100杯</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-images">
+        <img src="b1_05_普洱熟茶_包装.jpg" alt="包装">
+        <img src="b1_05_普洱熟茶_干茶.jpg" alt="干茶">
+      </div>
+      <div class="product-info">
+        <div class="product-top">
+          <div class="product-name">普洱熟茶</div>
+          <div class="product-tag">陈醇暖饮</div>
+        </div>
+        <div class="product-year">2018年 · 五年陈化</div>
+        <div class="product-desc">勐海发酵，糯香顺滑。暖胃养身，秋冬常备。五年陈化已去堆味，适口性极佳。</div>
+        <div class="product-spec">
+          <span><strong>200g</strong> 标准装</span>
+          <span>约80杯</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-images">
+        <img src="b1_06_古树金叶滇红_包装.jpg" alt="包装">
+        <img src="b1_06_古树金叶滇红_干茶.jpg" alt="干茶">
+      </div>
+      <div class="product-info">
+        <div class="product-top">
+          <div class="product-name">古树金叶滇红</div>
+          <div class="product-tag">甜醇暖饮</div>
+        </div>
+        <div class="product-year">2026年 · 古树老叶</div>
+        <div class="product-desc">全发酵工艺，蜜糖甜香。古树老叶耐泡度高，十泡有余香，是日常口粮的上选。</div>
+        <div class="product-spec">
+          <span><strong>150g</strong> 标准装</span>
+          <span>约60杯</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Package B -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-name">套餐二 · 云山品鉴</div>
+      <div class="section-tag">7款茶 · 1250g · 独家差异</div>
+    </div>
+    <p class="section-note">含全市场独家胭脂白茶，7款丰富配置，每款150-250g实在分量，50g独家品为点睛之笔。</p>
+
+    <div class="product">
+      <div class="product-images">
+        <img src="b2_01_胭脂白茶_包装.jpg" alt="包装">
+        <img src="b2_01_胭脂白茶_干茶.jpg" alt="干茶">
+      </div>
+      <div class="product-info">
+        <div class="product-top">
+          <div class="product-name">胭脂白茶</div>
+          <div class="product-tag exclusive">全市场独家</div>
+        </div>
+        <div class="product-year">独家品种 · 粉紫叶色</div>
+        <div class="product-desc">市面无同款。粉紫色干茶，冲泡后玫瑰香韵明显，视觉与味觉的双重记忆点。50g稀缺装，是茶礼中最值得谈论的话题。</div>
+        <div class="product-spec">
+          <span><strong>50g</strong> 稀缺装</span>
+          <span>约20杯</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-images">
+        <img src="b2_02_冰岛古白_包装.jpg" alt="包装">
+        <img src="b2_02_冰岛古白_干茶.jpg" alt="干茶">
+      </div>
+      <div class="product-info">
+        <div class="product-top">
+          <div class="product-name">冰岛古白</div>
+          <div class="product-tag">香气主调</div>
+        </div>
+        <div class="product-year">2021年 · 冰岛产区</div>
+        <div class="product-desc">古树白茶，毫香蜜韵，清甜持久。冰岛产区的辨识度香气，整盒茶礼的第一印象。</div>
+        <div class="product-spec">
+          <span><strong>250g</strong> 大袋装</span>
+          <span>约100杯</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-images">
+        <img src="b2_03_古树白茶_包装.jpg" alt="包装">
+        <img src="b2_03_古树白茶_干茶.jpg" alt="干茶">
+      </div>
+      <div class="product-info">
+        <div class="product-top">
+          <div class="product-name">古树白茶</div>
+          <div class="product-tag">醇厚打底</div>
+        </div>
+        <div class="product-year">2021年 · 云南大叶种</div>
+        <div class="product-desc">日晒萎凋，自然陈化。枣香药韵渐显，越存越醇，是茶礼中经得起时间检验的底牌。</div>
+        <div class="product-spec">
+          <span><strong>250g</strong> 大袋装</span>
+          <span>约100杯</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-images">
+        <img src="b2_04_云雾绿茶_包装.jpg" alt="包装">
+        <img src="b2_04_云雾绿茶_干茶.jpg" alt="干茶">
+      </div>
+      <div class="product-info">
+        <div class="product-top">
+          <div class="product-name">云雾绿茶</div>
+          <div class="product-tag">鲜爽代表</div>
+        </div>
+        <div class="product-year">2026年春 · 高海拔云雾产区</div>
+        <div class="product-desc">栗香清扬，回甘生津。春茶采摘，一芽一叶，是茶礼中提神解腻的清新担当。</div>
+        <div class="product-spec">
+          <span><strong>200g</strong> 标准装</span>
+          <span>约80杯</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-images">
+        <img src="b2_05_茉莉花茶_包装.jpg" alt="包装">
+        <img src="b2_05_茉莉花茶_干茶.jpg" alt="干茶">
+      </div>
+      <div class="product-info">
+        <div class="product-top">
+          <div class="product-name">茉莉飘雪</div>
+          <div class="product-tag">花香代表</div>
+        </div>
+        <div class="product-year">2026年 · 茉莉鲜花窨制</div>
+        <div class="product-desc">茶毫似雪，花香入水。茉莉鲜花反复窨制，开袋即香，是茶礼中最受欢迎的入门款。</div>
+        <div class="product-spec">
+          <span><strong>200g</strong> 标准装</span>
+          <span>约80杯</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-images">
+        <img src="b2_06_普洱熟茶_包装.jpg" alt="包装">
+        <img src="b2_06_普洱熟茶_干茶.jpg" alt="干茶">
+      </div>
+      <div class="product-info">
+        <div class="product-top">
+          <div class="product-name">普洱熟茶</div>
+          <div class="product-tag">陈醇暖饮</div>
+        </div>
+        <div class="product-year">2018年 · 五年陈化</div>
+        <div class="product-desc">勐海发酵，糯香顺滑。暖胃养身，秋冬常备。五年陈化已去堆味，适口性极佳。</div>
+        <div class="product-spec">
+          <span><strong>150g</strong> 标准装</span>
+          <span>约60杯</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-images">
+        <img src="b2_07_古树金叶滇红_包装.jpg" alt="包装">
+        <img src="b2_07_古树金叶滇红_干茶.jpg" alt="干茶">
+      </div>
+      <div class="product-info">
+        <div class="product-top">
+          <div class="product-name">古树金叶滇红</div>
+          <div class="product-tag">甜醇暖饮</div>
+        </div>
+        <div class="product-year">2026年 · 古树老叶</div>
+        <div class="product-desc">全发酵工艺，蜜糖甜香。古树老叶耐泡度高，十泡有余香，是日常口粮的上选。</div>
+        <div class="product-spec">
+          <span><strong>150g</strong> 标准装</span>
+          <span>约60杯</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Compare -->
+  <div class="compare">
+    <div class="compare-title">两款方案 任选其一</div>
+    <div class="compare-grid">
+      <div class="compare-col">
+        <h4>云山初见</h4>
+        <ul>
+          <li>6款茶品 · 1350g</li>
+          <li>四款250g大袋</li>
+          <li>两款200g/150g标准装</li>
+          <li>均衡配置 · 走量首选</li>
+          <li>每款都是实在分量</li>
+        </ul>
+      </div>
+      <div class="compare-vs">VS</div>
+      <div class="compare-col">
+        <h4>云山品鉴</h4>
+        <ul>
+          <li>7款茶品 · 1250g</li>
+          <li>含全市场独家胭脂白茶</li>
+          <li>丰富度更高 · 差异化更强</li>
+          <li>50g稀缺品为话题点睛</li>
+          <li>适合追求独特的客户</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Summary -->
+<div class="summary-bar">
+  <div class="container">
+    <div class="summary-grid">
+      <div class="summary-item">
+        <div class="label">统一售价</div>
+        <div class="value">¥260</div>
+        <div class="unit">两款同价 · 无套利空间</div>
+      </div>
+      <div class="summary-item">
+        <div class="label">最小单品</div>
+        <div class="value">150g</div>
+        <div class="unit">主茶无小气感</div>
+      </div>
+      <div class="summary-item">
+        <div class="label">最大单品</div>
+        <div class="value">250g</div>
+        <div class="unit">大袋克制不凑数</div>
+      </div>
+      <div class="summary-item">
+        <div class="label">定制能力</div>
+        <div class="value">一饼一盒</div>
+        <div class="unit">设计到成品全流程</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-line"></div>
+  <div class="footer-brand">云山茶礼</div>
+  <div class="footer-slogan">停下来 · 只为悦己</div>
+</div>
+
+</body>
+</html>
